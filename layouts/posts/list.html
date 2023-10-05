@@ -1,65 +1,28 @@
 {{ define "header" }}
 <header class="site-header">
-	{{ partial "navigation.html" . }}
-
-	<div class="archive-header container">
-    <h5 class="archive-description">
-      <a class="link-gray-underline-hover" href="/">&larr; Home</a> 
-    </h5>
-		<h1 class="archive-title">
-      <span>Blog Archive</span>
-      <small class="counter">({{ len (where .Site.RegularPages "Section" "posts") }} Posts)</small>
-		</h1>
-	</div>
+  {{ partial "navigation.html" . }}
 </header>
 {{ end }}
 
 {{ define "main" }}
-<main class="site-main container">
-  <div class="my-4">
-    <div class="row">
-      <div class="col-lg-9">
-        <table class="archive-table table table-sm mb-5">
-          <tbody>
-            {{ range ((where .Site.RegularPages "Section" "posts").GroupByDate "2006") }}
-            <tr>
-              <th scope="row" colspan="3">
-                <h2>{{ .Key }} <small class="counter">({{ len .Pages }} Posts)</small></h2>
-                
-              </th>
-            </tr>
-            {{ range .Pages }}
-            <tr>
-              <td class="py-2">
-                <h5><a href={{ .RelPermalink }}>{{ .Title }}</a></h5>
-                <div class="">{{ .Description | default .Summary | truncate 120 }}</div>
-              </td>
-              <td class="py-2 d-none d-sm-table-cell">
-                <ul class="list-unstyled my-0">
-                  {{- range .Params.tags }}  
-                  <li class="mb-0">
-                    <a class="link-main-no-underline" href="{{ partial `tag_url.html` . }}">#{{ . }}</a>
-                  </li>
-                  {{- end -}}
-                </ul>
-              </td>
-              <td class="py-2 text-nowrap">{{ .Date | time.Format ":date_medium" }}</td>
-            </tr>
-            {{ end }}
-            {{ end }}
-          </tbody>
-        </table>
+<main class="site-main container-fluid pt-2">
+  <div class="m-4">
+    {{ range ((where .Site.RegularPages "Section" "posts").GroupByDate "2006") }}
+    {{ range .Pages }}
+    <div class="row mb-5" style="height: 80vh;">
+      <div class="col-6" style="background-image: url('{{ .Params.image }}'); background-size: cover; background-repeat: no-repeat;">
       </div>
-      <div class="col-lg-3">
-        <h2>Tags 🏷️</h2>
-
-        <ul class="list-unstyled">
-          {{ range .Site.Taxonomies.tags }}
-          <li class="mb-1"><a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }}</a>&nbsp;({{ len .Pages }})</li>
-          {{ end }}
-        </ul>
+      <div class="col-6 d-flex align-items-center jusitfy-content-center mb-5 ps-5">
+        <div class="font-normal">
+          <p>{{ .Date | time.Format ":date_medium" }}</p>
+          <h1 class="font-bold">Blogeintrag: {{ .Title }}</h1>
+          <p>{{ .Description | default .Summary | truncate 120 }}</p>
+          <a href="{{ .RelPermalink }}" class="continue-reading">Weiterlesen</a>
+        </div>
       </div>
     </div>
+    {{ end }}
+    {{ end }}
   </div>
 </main>
 {{ end }}

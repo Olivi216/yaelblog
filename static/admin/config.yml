@@ -50,25 +50,6 @@ collections:
           default: false,
         }
       - {
-          name: "pinned",
-          label: "Anheften",
-          widget: "boolean",
-          hint: "Angeheftete Einträge werden zuoberst vor den neusten Einträgen angezeigt.",
-          default: false,
-        }
-      - {
-          name: "tags",
-          label: "Tags",
-          widget: "list",
-          required: false,
-          pattern:
-            [
-              "^[^\\s#]+$",
-              "Darf keine Leerschläge oder # enthalten. Mehrere Tags durch Komma trennen",
-            ],
-          hint: "Tags sind hilfreich, damit Besucher nach diesen filtern können. Mehrere Tags durch Komma trennen. Achtung: Darf keine Leerschläge oder # enthalten!",
-        }
-      - {
           name: "image",
           label: "Bild",
           widget: "image",
@@ -98,6 +79,45 @@ collections:
           editor_components: [],
           required: false,
           hint: "Kann für Quellenangaben oder andere Hinweise verwendet werden.",
+        }
+  - name: "portfolio"
+    label: "Portfolio"
+    description: >
+      Hier können Portfoliobeiträge erstellt und bearbeitet werden.
+    preview_path: "/"
+    editor:
+      preview: false
+    folder: "content/portfolio"
+    path: "{{slug}}/index"
+    media_folder: "" # Stores media relative to content.
+    public_folder: ""
+    create: true
+    format: "toml-frontmatter"
+    fields:
+      - {
+          name: "title",
+          label: "Titel",
+          widget: "string",
+          hint: "Beim ersten Speichern wird der Titel zur URL des Blogartikels.",
+        }
+      - {
+          name: "draft",
+          label: "Entwurfsmodus",
+          widget: "boolean",
+          hint: "Einträge im Entwurfsmodus werden nicht angezeigt.",
+          default: false,
+        }
+      - {
+          name: "image",
+          label: "Bild",
+          widget: "image",
+          media_library: { config: { max_file_size: 256000 } },
+        }
+      - {
+          name: "link",
+          label: "Link",
+          widget: "string",
+          hint: "Link zum weiterleiten zum Blog.",
         }
   - name: "pages"
     label: "Eigene Seiten"
@@ -189,28 +209,6 @@ collections:
               label: "Beschreibung",
               widget: "string",
               hint: "Eine kurze Beschreibung der Website (Tagline).",
-            }
-          - {
-              name: "footerLeft",
-              label: "Fusszeile links",
-              widget: "markdown",
-              minimal: true,
-              buttons:
-                ["bold", "italic", "link", "bulleted-list", "numbered-list"],
-              editor_components: [],
-              required: false,
-              hint: "Fusszeile ganz unten links an der Seite.",
-            }
-          - {
-              name: "footerRight",
-              label: "Fusszeile rechts",
-              widget: "markdown",
-              minimal: true,
-              buttons:
-                ["bold", "italic", "link", "bulleted-list", "numbered-list"],
-              editor_components: [],
-              required: false,
-              hint: "Fusszeile ganz unten rechts an der Seite.",
             }
       - label: "Autor"
         name: "author"

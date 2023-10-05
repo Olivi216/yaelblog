@@ -11,6 +11,7 @@
 	<!-- Styles -->
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/main.css" rel="stylesheet">
+	<link href="/css/style.min.css" rel="stylesheet">
 
 	{{ block "head_includes" . }}{{ end }} 
 	{{ with $settingsCode.Params.siteheader }}{{ . | safeHTML }}{{ end }}
@@ -23,10 +24,6 @@
 {{ end }}
 
 {{ block "main" . }}{{ end }}
-
-{{ block "footer" . }}
-	{{ partial "footer.html" . -}}
-{{ end }}
 
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/medium-zoom.min.js"></script>

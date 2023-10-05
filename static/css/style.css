@@ -1,0 +1,93 @@
+@import url("https://use.typekit.net/fgl8asc.css");
+body,
+html {
+  margin: 0;
+}
+
+/* Fonts */
+.font-normal {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 500;
+}
+
+/* Navigation */
+.navbar-brand h1 {
+  font-size: 30px;
+}
+
+.nav-item,
+.nav-link {
+  color: black;
+}
+.nav-item:hover,
+.nav-link:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.site-nav {
+  box-shadow: none !important;
+}
+
+/* Main */
+.titleSite {
+  font-size: 56px;
+  line-height: 1;
+}
+
+.bgMainSecondary {
+  background-color: #DFE0E2;
+}
+
+.bgMainSecondary h1 {
+  line-height: 1;
+}
+
+.bgMainSecondary p {
+  line-height: 1;
+  font-size: 20px;
+}
+
+.bgMainSecondary a {
+  color: black;
+  text-decoration: underline;
+}
+
+.berufserfahrung p {
+  line-height: 1.24;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 0;
+}
+.card .card-img, .card .card-img-overlay {
+  border-radius: 0 !important;
+}
+.card .card-title {
+  font-size: 28px;
+}
+.card .card-img-overlay {
+  transition: all;
+  transition-duration: 300ms;
+}
+.card .card-img-overlay:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 1 !important;
+}
+
+.continue-reading {
+  color: black;
+  text-decoration: underline;
+}
+.continue-reading:hover {
+  color: black;
+}

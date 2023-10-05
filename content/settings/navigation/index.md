@@ -2,11 +2,20 @@
 headless = true
 
 [[link]]
-title = "Home"
+title = "home"
 url = "/"
 
 [[link]]
-title = "About me"
-url = "/about/"
+title = "portfolio"
+url = "/portfolio/"
+
+[[link]]
+title = "blogs"
+url = "/posts/"
+
+[[link]]
+title = "instagram"
+url = "https://www.instagram.com/kunstvoryael/"
+
 +++
 

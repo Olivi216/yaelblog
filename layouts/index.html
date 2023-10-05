@@ -4,8 +4,10 @@
 {{ $paginator := .Paginate $posts .Site.Params.paginateHome -}}
 {{ .Scratch.Set "paginator" $paginator -}}
 
-{{ if $paginator.HasNext }}<link rel="next" href="{{ $paginator.Next.URL | absURL }}" />{{ end }}
-{{ if $paginator.HasPrev }}<link rel="prev" href="{{ $paginator.Prev.URL | absURL }}" />{{ end }}
+{{ if $paginator.HasNext }}
+<link rel="next" href="{{ $paginator.Next.URL | absURL }}" />{{ end }}
+{{ if $paginator.HasPrev }}
+<link rel="prev" href="{{ $paginator.Prev.URL | absURL }}" />{{ end }}
 {{ end }}
 
 {{ define "header" }}
@@ -14,41 +16,47 @@
 
 {{ $headerStyle := "" -}}
 {{ if $settingsDesign.Params.image -}}
-{{ $headerStyle = print `background-image: linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)), url(` $settingsDesign.Params.image `);` -}}
+{{ $headerStyle = print `background-image: linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)), url(`
+$settingsDesign.Params.image `);` -}}
 {{ else -}}
 {{ $headerStyle = print `background-color: ` $settingsDesign.Params.color `;` -}}
 {{ end -}}
-<header class="site-header site-header-img"{{ with $headerStyle }} style="{{ . | safeCSS }}"{{ end }}>
+<header class="site-header site-header-img">
 	{{ partial "navigation.html" . }}
-
-	<div class="site-header-img-content container">
-		<h1 class="site-title">
-			{{ $settingsGeneral.Title | default "[Title]" }}
-		</h1>
-		<h2 class="site-description">
-			{{ $settingsGeneral.Description | default "[Subtitle]" }}
-		</h2>
-	</div>
 </header>
 {{ end }}
 
 {{ define "main" }}
-<main class="site-main container">
-	<div class="post-card-deck row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-		{{ $paginator := .Scratch.Get "paginator"}}
-		{{ range $paginator.Pages }}
-		<div class="col">
-			{{ partial "post_card.html" . }}
+{{ $settingsGeneral := .Site.GetPage "/settings/general" -}}
+{{ $settingsDesign := .Site.GetPage "/settings/design" -}}
+<main class="site-main mb-0">
+	<div class="container-fluid px-4">
+		<div class="row pb-5" style="height: 55vh;">
+			<div class="col-6 d-flex flex-column">
+				<h1 class="font-aktivGrotesk font-bold titleSite pe-5 mt-3">{{ $settingsGeneral.Params.description | safeHTML }}
+				</h1>
+				<div class="mt-auto font-normal berufserfahrung">
+					<h5>BERUFSERFAHRUNG</h5>
+					<p class="mb-0">Art Director <img src="/img/right-arrow.png" width="auto" height="7px"> Unternehmen, Madrid, 2016-2019</p>
+					<p class="mb-0">Art Director <img src="/img/right-arrow.png" width="auto" height="7px"> Unternehmen, Madrid, 2016-2019</p>
+					<p class="mb-0">Art Director <img src="/img/right-arrow.png" width="auto" height="7px"> Unternehmen, Madrid, 2016-2019</p>
+				</div>
+			</div>
+			<div class="col-6 d-flex align-items-center">
+				<img src="{{ $settingsDesign.Params.image }}" width="auto" height="400px" />
+			</div>
 		</div>
-		{{ end }}
 	</div>
-	{{ partial "pagination.html" . }}
-
-	{{- if gt $paginator.TotalNumberOfElements 2 }}
-	<div class="d-flex justify-content-center mt-3 mb-5">
-		<a class="link-gray-no-underline" href="/posts/">— Archive —</a>
+	<div class="bgMainSecondary py-5">
+		<div class="container py-5">
+			<h1 class="font-normal w-75">hi, i'm yael and i am an artist/designer who loves to create in my free time
+			</h1>
+			<div class="mt-4 w-75 mx-auto">
+				<p class="font-normal w-75 mx-auto">if you're interested in my process of my designs or generally my
+					art then head to my <a href="/portfolio">portfolio page</a></p>
+			</div>
+		</div>
 	</div>
-	{{- end }}
 </main>
 {{ end }}
 
@@ -60,14 +68,14 @@
 {{ define "body_includes" }}
 {{/* Used to redirect the user during Netlify sign up or log in. See also script in head_includes. */}}
 <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
+	if (window.netlifyIdentity) {
+		window.netlifyIdentity.on("init", user => {
+			if (!user) {
+				window.netlifyIdentity.on("login", () => {
+					document.location.href = "/admin/";
+				});
+			}
+		});
+	}
 </script>
 {{ end }}
