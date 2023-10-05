@@ -9,8 +9,9 @@
   <div class="m-4">
     {{ range ((where .Site.RegularPages "Section" "posts").GroupByDate "2006") }}
     {{ range .Pages }}
+    {{- $post := . }}
     <div class="row mb-5" style="height: 80vh;">
-      <div class="col-6" style="background-image: url('{{ .Params.image }}'); background-size: cover; background-repeat: no-repeat;">
+      <div class="col-6" style="background-image: url('{{ partial `asset_url.html` (dict `folder` $post.RelPermalink `asset` $post.Params.image) }}'); background-size: cover; background-repeat: no-repeat;">
       </div>
       <div class="col-6 d-flex align-items-center jusitfy-content-center mb-5 ps-5">
         <div class="font-normal">
