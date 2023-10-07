@@ -119,6 +119,38 @@ collections:
           widget: "string",
           hint: "Link zum weiterleiten zum Blog.",
         }
+  name: "experience"
+    label: "Berufserfahrungen"
+    label_singular: "Berufserfahrung"
+    description: >
+      Hier können Berufserfahrungen erstellt und bearbeitet werden.
+    preview_path: "/"
+    editor:
+      preview: false
+    folder: "content/experience"
+    path: "{{slug}}/index"
+    media_folder: "" # Stores media relative to content.
+    public_folder: ""
+    create: true
+    format: "toml-frontmatter"
+    fields:
+      - {
+          name: "title",
+          label: "Titel",
+          widget: "string",
+        }
+      - {
+          name: "draft",
+          label: "Entwurfsmodus",
+          widget: "boolean",
+          hint: "Einträge im Entwurfsmodus werden nicht angezeigt.",
+          default: false,
+        }
+      - {
+          name: "text",
+          label: "Text",
+          widget: "string",
+        }
   - name: "pages"
     label: "Eigene Seiten"
     label_singular: "Seite"

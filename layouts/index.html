@@ -37,9 +37,15 @@ $settingsDesign.Params.image `);` -}}
 				</h1>
 				<div class="mt-auto font-normal berufserfahrung">
 					<h5>BERUFSERFAHRUNG</h5>
-					<p class="mb-0">Art Director <img src="/img/right-arrow.png" width="auto" height="7px"> Unternehmen, Madrid, 2016-2019</p>
-					<p class="mb-0">Art Director <img src="/img/right-arrow.png" width="auto" height="7px"> Unternehmen, Madrid, 2016-2019</p>
-					<p class="mb-0">Art Director <img src="/img/right-arrow.png" width="auto" height="7px"> Unternehmen, Madrid, 2016-2019</p>
+					{{ range (where .Site.RegularPages "Section" "experience") }}
+					{{ $page := . }}
+					{{ $pageSlug  := split $page "/" }}
+					{{ $pageSlug := index $pageSlug 2 }}
+					{{ $filePath := printf "/experience/%s" $pageSlug }}
+					{{ $contentExperience := .Site.GetPage $filePath -}}
+					<p class="mb-0">{{ $contentExperience.Params.title }} <img src="/img/right-arrow.png" width="auto" height="7px"> {{
+						$contentExperience.Params.text }}</p>
+					{{ end }}
 				</div>
 			</div>
 			<div class="col-6 d-flex align-items-center">
