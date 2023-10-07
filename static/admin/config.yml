@@ -119,7 +119,7 @@ collections:
           widget: "string",
           hint: "Link zum weiterleiten zum Blog.",
         }
-  name: "experience"
+  - name: "experience"
     label: "Berufserfahrungen"
     label_singular: "Berufserfahrung"
     description: >

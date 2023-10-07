@@ -32,7 +32,7 @@ $settingsDesign.Params.image `);` -}}
 <main class="site-main mb-0">
 	<div class="container-fluid px-4">
 		<div class="row pb-5" style="height: 55vh;">
-			<div class="col-6 d-flex flex-column">
+			<div class="col-12 col-md-6 d-flex flex-column">
 				<h1 class="font-aktivGrotesk font-bold titleSite pe-5 mt-3">{{ $settingsGeneral.Params.description | safeHTML }}
 				</h1>
 				<div class="mt-auto font-normal berufserfahrung">
@@ -48,8 +48,8 @@ $settingsDesign.Params.image `);` -}}
 					{{ end }}
 				</div>
 			</div>
-			<div class="col-6 d-flex align-items-center">
-				<img src="{{ $settingsDesign.Params.image }}" width="auto" height="400px" class="pe-4" />
+			<div class="col-12 col-md-6 d-flex align-items-center">
+				<img src="{{ $settingsDesign.Params.image }}" class="img-fluid "/>
 			</div>
 		</div>
 	</div>
