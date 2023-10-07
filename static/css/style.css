@@ -64,6 +64,21 @@ html {
   line-height: 1.24;
 }
 
+@media screen and (min-width: 1400px) {
+  .img-front {
+    height: 445px;
+    width: 670px;
+  }
+}
+.main-container {
+  height: 55vh;
+}
+
+@media screen and (max-width: 767px) {
+  .main-container {
+    height: auto;
+  }
+}
 /* Cards */
 .card {
   border: none;
