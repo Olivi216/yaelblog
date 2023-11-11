@@ -36,9 +36,11 @@ $settingsDesign.Params.image `);` -}}
 				<h1 class="font-aktivGrotesk font-bold titleSite pe-5 mt-3 mb-4 mb-md-0">{{ $settingsGeneral.Params.description | safeHTML }}
 				</h1>
 				<div class="mt-auto font-normal berufserfahrung">
-					<h5>BERUFSERFAHRUNG</h5>
 					{{ range (where .Site.RegularPages "Section" "experience") }}
 					{{ $page := . }}
+					{{ if $page }}
+					<h5>BERUFSERFAHRUNG</h5>
+					{{ end }}
 					{{ $pageSlug  := split $page "/" }}
 					{{ $pageSlug := index $pageSlug 2 }}
 					{{ $filePath := printf "/experience/%s" $pageSlug }}
