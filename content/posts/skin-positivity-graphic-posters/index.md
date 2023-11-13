@@ -15,7 +15,7 @@ My process was to start with some sketches. My initial steps involved sketching 
 
 After that I just stared to experiment. I tried different variations of how to display the text, and what how I could draw the viewer’s attention to the subject rather than the typography. In the end I came up with about 6 layouts, of one poster, that I was happy with.
 
- These are two are the posters I particularly liked.
+This is a the poster I particularly liked.
 
 ![](imresizer-1699705575174.jpg)
 
