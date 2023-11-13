@@ -2,6 +2,6 @@
 headless = true
 icon = "/img/default-favicon.png"
 logo = "/img/default-logo.png"
-image = "/img/default-image.jpg"
+image = "/media/imresizer-1699914019672.jpg"
 color = "#dfe0e2"
 +++
