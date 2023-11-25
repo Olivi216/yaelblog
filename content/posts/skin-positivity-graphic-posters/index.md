@@ -17,6 +17,6 @@ After that I just stared to experiment. I tried different variations of how to d
 
 This is a the poster I particularly liked.
 
-![](imresizer-1699705575174.jpg)
+![](imresizer-1700943093333.jpg)
 
 My vision was to keep the typo as minimalistic as possible as I mentioned before. I choose a typography that resembles that in my opinion. Even though this project is still a not quite done, I had lots of fun creating these.
