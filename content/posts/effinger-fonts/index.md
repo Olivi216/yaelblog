@@ -1,7 +1,7 @@
 +++
 title = "Effinger Fonts"
 date = "2024-01-22"
-draft = true
+draft = false
 image = "bildschirmfoto-2024-01-18-um-21.55.45.png"
 +++
 Vor Kurzem hatte ich die Gelegenheit, im Effinger, bei der Raumvermietung, die Verantwortung für die Signalethik und das Design zu übernehmen. Während des Designprozesses wurde mir bewusst, wie vielfältig die Signalethik im Effinger ist – sei es auf den Türen, Wänden oder dem Menü an der Kaffeebar. Vieles davon fällt nicht sofort ins Auge. Wenn man sich nicht damit befasst.
