@@ -87,20 +87,22 @@ html {
   border: none;
   border-radius: 0;
 
-  .card-img, .card-img-overlay {
+  .card-img,
+  .card-img-overlay {
     border-radius: 0 !important;
   }
 
   .card-title {
     font-size: 28px;
   }
+
   .card-img-overlay {
     transition: all;
     transition-duration: 300ms;
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.5);
-      opacity: 1!important;
+      opacity: 1 !important;
     }
   }
 }
@@ -109,6 +111,7 @@ html {
 .continue-reading {
   color: black;
   text-decoration: underline;
+
   &:hover {
     color: black;
   }
@@ -116,9 +119,10 @@ html {
 
 .image-container {
   position: relative;
-  overflow: hidden;
-  padding-top: 125%; /* 5:4 aspect ratio (4/5 * 100%) */
-  max-height: 100%; /* Set a maximum height for the image container */
+  padding-top: 56.25%;
+  /* 16:9 aspect ratio (9/16 * 100%) */
+  max-height: 100%;
+  /* Set a maximum height for the image container */
 }
 
 .responsive-image {
@@ -132,5 +136,6 @@ html {
 
 /* Custom class for limiting the height of the image container */
 .max-height-container {
-  max-height: 30vh!important; /* Adjust the max height as needed */
+  max-height: 30vh !important;
+  /* Adjust the max height as needed */
 }
