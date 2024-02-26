@@ -2,7 +2,7 @@
 title = "Lesen im digitalen Zeitalter"
 date = "2024-02-27"
 draft = true
-image = "imresizer-1708982593867.jpg"
+image = "reading2.jpg"
 description = ""
 +++
 
