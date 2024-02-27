@@ -1,7 +1,7 @@
 +++
 title = "Lesen im digitalen Zeitalter"
 date = "2024-02-27"
-draft = true
+draft = false
 image = "reading2.jpg"
 description = ""
 +++
